@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;500;700&display=swap");
+
+#root,
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  background: #d8d8d8;
+  font-family: "Open sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+form {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 2px 40px;
+  margin: 20px;
+  width: 320px;
+}
+
+.brand-name {
+  font-size: 1.1rem;
+  font-family: "Merriweather", serif;
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  margin: 15px 0 10px;
+  width: 100%;
+}
+
+.form-name {
+  display: flex;
+  justify-content: space-between;
+  margin: -10px 0;
+  width: 100%;
+}
+
+.last-name {
+  padding-left: 5px;
+}
+
+.login-option,
+.register-option {
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.password-option {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+
+.save-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox-text {
+  padding-left: 5px;
+}
+
+.sub-option,
+.terms {
+  font-size: 0.7rem;
+  margin: 6px 0;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+  border: none;
+  outline: none;
+  border: 1px solid #7f7f7f;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  transition: border 0.3s ease-in;
+}
+
+form input:focus {
+  border: 2px solid #0487d3;
+}
+
+/* Make label remain ontop once there is an input value */
+form input:focus ~ label {
+  /* position: fixed; */
+  top: 0;
+  color: #0487d3;
+  font-size: 0.8rem;
+  transform: translateY(-50%);
+}
+
+.form-group {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  right: 10px;
+}
+
+.eye-icon:hover {
+  background-color: #dfdffb;
+  border: 1px solid #b7b7ff;
+  border-radius: 2px;
+  padding: 2px 3px;
+}
+
+form label {
+  background-color: #fff;
+  position: absolute;
+  color: #7f7f7f;
+  top: 50%;
+  left: 10px;
+  font-size: 1rem;
+  padding: 0 2px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.register,
+.login {
+  background-color: #0050c0;
+  border-radius: 5px;
+  color: #fff;
+  margin: 8px 0;
+  font-size: 1.1rem;
+  height: 50px;
+}
+
+.login:hover,
+.register:hover {
+  background-color: #0262ea;
+}
+
+.auth-google,
+.auth-facebook {
+  border: 1px solid #d3d3fa;
+  border-radius: 10px;
+  margin: 5px 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+}
+
+.auth-google {
+  background-color: #e5e5e5;
+}
+
+.auth-facebook {
+  background-color: #1b4af7;
+  color: #f2f2f2;
+}
+
+/* Alert notification */
+.error,
+.success {
+  border-radius: 5px;
+  color: #222;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-style: italic;
+  height: 30px;
+  width: 100%;
+}
+
+.error {
+  background-color: #fde0e0;
+}
+
+.success {
+  background-color: #8fffb6;
+}
+
+.default {
+  border: 1px solid #7f7f7f;
+}
+
+.warning {
+  border: 1px solid #e80505;
+}
