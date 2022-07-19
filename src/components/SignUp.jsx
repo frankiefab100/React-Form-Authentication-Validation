@@ -49,8 +49,7 @@ const SignUp = () => {
     }
   };
 
-  const { inputValues, handleFormChange, errorMessage, successMessage } =
-    FormValidation(validate);
+  const { errorMessage, successMessage } = FormValidation(validate);
 
   const [passwordValues, setPasswordValues] = useState({
     password: "",
@@ -61,13 +60,6 @@ const SignUp = () => {
     setPasswordValues({
       ...passwordValues,
       showPassword: !passwordValues.showPassword,
-    });
-  };
-
-  const handlePasswordChange = (e) => {
-    setPasswordValues({
-      ...passwordValues,
-      [e.target.name]: e.target.value,
     });
   };
 
@@ -92,8 +84,8 @@ const SignUp = () => {
             type="text"
             name="firstname"
             id="first-name"
-            value={inputValues.firstname}
-            onChange={handleFormChange}
+            // value={inputValues.firstname}
+            // onChange={handleFormChange}
           />
           <label htmlFor="first-name">First Name </label>
         </div>
@@ -102,8 +94,8 @@ const SignUp = () => {
             type="text"
             name="lastname"
             id="last-name"
-            value={inputValues.lastName}
-            onChange={handleFormChange}
+            // value={inputValues.lastname}
+            // onChange={handleFormChange}
           />
           <label htmlFor="last-name">Last Name </label>
         </div>
@@ -114,8 +106,8 @@ const SignUp = () => {
           type="email"
           name="email"
           id="email"
-          value={inputValues.email}
-          onChange={handleFormChange}
+          // value={inputValues.email}
+          // onChange={handleFormChange}
         />
         <label htmlFor="email">Email Address </label>
       </div>
@@ -124,8 +116,8 @@ const SignUp = () => {
           type={passwordValues.showPassword ? "text" : "password"}
           name="password"
           id="password"
-          value={passwordValues.password && inputValues.password}
-          onChange={handlePasswordChange("password")}
+          // value={passwordValues.password && inputValues.password}
+          // onChange={handlePasswordChange("password")}
         />
         <label htmlFor="password">Password</label>
 
@@ -138,8 +130,8 @@ const SignUp = () => {
           type={passwordValues.showPassword ? "text" : "password"}
           name="confirmPassword"
           id="confirm-password"
-          value={passwordValues.password && inputValues.password}
-          onChange={handlePasswordChange("password")}
+          // value={passwordValues.password && inputValues.password}
+          // onChange={handlePasswordChange("password")}
         />
         <label htmlFor="confirm-password">Confirm Password</label>
 

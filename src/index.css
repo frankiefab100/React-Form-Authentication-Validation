@@ -29,7 +29,7 @@ form {
 }
 
 .brand-name {
-  font-size: 1.1rem;
+  font-size: 1.8rem;
   font-family: "Merriweather", serif;
 }
 
@@ -96,12 +96,12 @@ form input:focus {
 }
 
 /* Make label remain ontop once there is an input value */
-form input:focus ~ label {
-  /* position: fixed; */
+
+form input:focus ~ label,
+form input:not([value=""]) ~ label {
   top: 0;
   color: #0487d3;
   font-size: 0.8rem;
-  transform: translateY(-50%);
 }
 
 .form-group {
@@ -113,6 +113,7 @@ form input:focus ~ label {
   cursor: pointer;
   top: 10px;
   right: 10px;
+  bottom: 5px;
 }
 
 .eye-icon:hover {

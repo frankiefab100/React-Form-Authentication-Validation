@@ -9,7 +9,7 @@ const FormValidation = (callback, validate) => {
     confirmPassword: "",
   });
 
-  const [errorMessage, setErrorMessage] = useState({});
+  const [errorMessage, setErrorMessage] = useState([]);
   const [successMessage, setSuccessMessage] = useState(false);
 
   const handleFormChange = (e) => {
@@ -18,6 +18,22 @@ const FormValidation = (callback, validate) => {
       [e.target.name]: e.target.value,
     });
   };
+
+  // const handlePasswordChange = (e) => {
+  //   setPasswordValues({
+  //     ...passwordValues,
+  //     [e.target.name]: e.target.value,
+  //   });
+  // };
+
+  //TARGET
+  // <input
+  //   type="email"
+  //   name="email"
+  //   id="email"
+  //   // value={inputValues.email}
+  //   // onChange={handleFormChange}
+  // />;
 
   const handleSubmit = (e) => {
     e.preventDefault();

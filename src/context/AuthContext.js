@@ -25,16 +25,16 @@ export const UserAuthContextProvider = ({ children }) => {
   useEffect(() => {
     setLoading(true);
 
-    // const unsubscribe = onAuthStateChanged(auth, (response) => {
-    //   response ? setUserProfile(response) : setUserProfile(null);
+    const unsubscribe = onAuthStateChanged(auth, (response) => {
+      response ? setUser(response) : setUser(null);
 
-    const unsubscribe = onAuthStateChanged((auth, user) => {
-      setUser(auth.user, { user });
+      // const unsubscribe = onAuthStateChanged((auth, user) => {
+      //   setUser(auth.user, { user });
 
-      setError("");
-      setLoading(false);
+      //   setError("");
+      //   setLoading(false);
+      // });
     });
-    // });
     return unsubscribe;
   }, []);
 

@@ -10,13 +10,19 @@ const SignIn = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
   const [rememberPassword, setRememberPassword] = useState(false);
+  const [passwordValues, setPasswordValues] = useState({
+    password: "",
+    showPassword: false,
+  });
 
   const navigate = useNavigate();
 
   const handleShowPassword = () => {
-    setShowPassword(() => !showPassword);
+    setPasswordValues({
+      ...passwordValues,
+      showPassword: !passwordValues.showPassword,
+    });
   };
 
   const handlePasswordChange = (e) => {
@@ -79,16 +85,17 @@ const SignIn = () => {
       </div>
       <div className="form-group">
         <input
-          type={showPassword ? "text" : "password"}
+          type={passwordValues.showPassword ? "text" : "password"}
           name="password"
           id="password"
-          value={password}
+          // value={password || ""}
+          value={(e) => setPassword(e.target.value)}
           onChange={handlePasswordChange}
         />
         <label htmlFor="password">Password</label>
 
         <span onClick={handleShowPassword} className="eye-icon">
-          {showPassword ? <FaEyeSlash /> : <FaEye />}
+          {passwordValues.showPassword ? <FaEyeSlash /> : <FaEye />}
         </span>
       </div>
       <div className="password-option">
@@ -109,11 +116,11 @@ const SignIn = () => {
       </button>
       <div className="authentication-options">
         <div className="sub-option">----- or sign in with ----</div>
-        <button onclick={handleGoogleAuth} className="auth-google">
+        <button onClick={handleGoogleAuth} className="auth-google">
           <FcGoogle size="24px" />
           Continue with Google
         </button>
-        <button onclick={handleFacebookAuth} className="auth-facebook">
+        <button onClick={handleFacebookAuth} className="auth-facebook">
           <FaFacebook color="#fff" size="24px" />
           Continue with Facebook
         </button>
